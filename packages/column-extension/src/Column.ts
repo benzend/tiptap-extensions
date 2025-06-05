@@ -7,6 +7,12 @@ export const Column = Node.create({
   isolating: true,
   selectable: false,
 
+  parseHTML() {
+    return [
+      { tag: 'div.column' }
+    ];
+  }
+
   renderHTML({ HTMLAttributes }) {
     const attrs = mergeAttributes(HTMLAttributes, { class: 'column' });
     return ['div', attrs, 0];
