@@ -37,6 +37,12 @@ export const ColumnBlock = Node.create<ColumnBlockOptions>({
     };
   },
 
+  parseHTML() {
+    return [
+      { tag: 'div.column-block' }
+    ];
+  }
+
   renderHTML({ HTMLAttributes }) {
     const attrs = mergeAttributes(HTMLAttributes, { class: 'column-block' });
     return ['div', attrs, 0];
